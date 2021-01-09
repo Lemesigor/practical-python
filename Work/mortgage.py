@@ -9,6 +9,9 @@
 # Exercise 1.9
 # Add a start and end mont for the extr payment
 
+#Exercise 1.10
+# Create a table 
+
 principal = 500000.0
 rate = 0.05
 payment = 2684.11
@@ -26,9 +29,11 @@ while principal > 0:
     if total_months >= extra_payment_start_month and total_months <= extra_payment_end_month:
         final_payment += extra_payment
 
-    principal = principal * (1+rate/12) - final_payment
+    principal_with_raiting = principal * (1+rate/12)
+    principal = principal_with_raiting - final_payment if principal_with_raiting > final_payment else 
 
     total_paid = total_paid + final_payment
+    print(f'Month {total_months} were paid a total of {total_paid}. Remaining: {principal}')
 
 
 print('Total paid', round(total_paid, 4), 'Total months', total_months)
