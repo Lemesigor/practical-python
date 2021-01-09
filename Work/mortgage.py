@@ -6,6 +6,9 @@
 # Exercise 1.8
 # Calculate the total payment and number of months if Dave pays an extra 1000 dollars in the first 12 months
 
+# Exercise 1.9
+# Add a start and end mont for the extr payment
+
 principal = 500000.0
 rate = 0.05
 payment = 2684.11
@@ -13,17 +16,18 @@ total_paid = 0.0
 total_months = 0
 
 extra_payment = 1000
-number_of_months_with_extra_payment = 12
+extra_payment_start_month = 61
+extra_payment_end_month = 108
 
 while principal > 0:
     total_months += 1
     final_payment = payment
-    
-    if total_months <= number_of_months_with_extra_payment:
+
+    if total_months >= extra_payment_start_month and total_months <= extra_payment_end_month:
         final_payment += extra_payment
-        
+
     principal = principal * (1+rate/12) - final_payment
-    
+
     total_paid = total_paid + final_payment
 
 
